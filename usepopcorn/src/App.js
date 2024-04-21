@@ -1,5 +1,5 @@
 import Main from "./components/Main";
-import NavBar from "./components/NavBar";
+import { useState } from "react";
 
 export default function App() {
   return (
@@ -7,5 +7,43 @@ export default function App() {
       <NavBar />
       <Main />
     </>
+  );
+}
+
+function NavBar({ movies }) {
+  return (
+    <nav className="nav-bar">
+      <Logo />
+      <Search />
+      <NumResults />
+    </nav>
+  );
+}
+
+function Logo() {
+  return (
+    <div className="logo">
+      <span role="img">🍿</span>
+      <h1>usePopcorn</h1>
+    </div>
+  );
+}
+function Search() {
+  const [query, setQuery] = useState("");
+  return (
+    <input
+      className="search"
+      type="text"
+      placeholder="Search movies..."
+      value={query}
+      onChange={(e) => setQuery(e.target.value)}
+    />
+  );
+}
+function NumResults() {
+  return (
+    <p className="num-results">
+      Found <strong>x</strong> results
+    </p>
   );
 }
