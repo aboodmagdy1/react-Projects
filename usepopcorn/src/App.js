@@ -1,12 +1,6 @@
 import Main, { Box } from "./components/Main";
 import { useState } from "react";
-import {
-  MovieList,
-  WatchedBox,
-  ListBox,
-  WatchedMovieList,
-  WatchedSummary,
-} from "./components/Main";
+import { MovieList, WatchedMovieList, WatchedSummary } from "./components/Main";
 
 const tempMovieData = [
   {
